@@ -1,5 +1,4 @@
-[
-    {
+{
       user: 'Naval Ravikant',
       title: 'Meditation',
       article: 'The art of doing nothing.',
@@ -19,5 +18,4 @@
       title: "Color doesn't matter",
       article:
         "I don't care if you're gay, black, Chinese, straight. That means nothing to me. It's all an illusion.",
-    },
-  ]
+    }
