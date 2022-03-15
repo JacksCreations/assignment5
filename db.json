@@ -1,4 +1,6 @@
 {
+      "posts": [
+            {
       user: 'Naval Ravikant',
       title: 'Meditation',
       article: 'The art of doing nothing.',
@@ -19,3 +21,5 @@
       article:
         "I don't care if you're gay, black, Chinese, straight. That means nothing to me. It's all an illusion.",
     }
+  ]
+}
