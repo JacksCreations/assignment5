@@ -1,9 +1,9 @@
 {
       "posts": [
     {
-      "user": 'Naval Ravikant',
-      "title": 'Meditation',
-      "article": 'The art of doing nothing.'
+      "user": "Naval Ravikant",
+      "title": "Meditation",
+      "article": "The art of doing nothing."
     }
   ]
 }
