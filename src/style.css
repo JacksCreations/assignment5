@@ -1,0 +1,78 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.post {
+  font-family: bebas;
+  font-size: 10px;
+  background: rgb(182, 182, 182, 0.3);
+  border: 2px solid black;
+  padding: 5px;
+  margin-top: 15px;
+}
+
+.title {
+  font-family: 'Oswald';
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.article {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  margin-top: -15px;
+}
+
+.user {
+  font-family: 'georgia';
+  font-size: 17px;
+  font-style: italic;
+}
+
+label {
+  font-family: 'Bebas Neue';
+  font-size: 22px;
+  margin: 5px;
+}
+
+#formLabel {
+  margin-bottom: 10px;
+  font-size: 38px;
+  font-family: 'Bebas Neue';
+}
+
+.mb-2 {
+  width: 98%;
+}
+
+.delButton {
+  font-size: 15px;
+  float: right;
+  margin-top: 4px;
+  margin-right: 6px;
+  background-color: rgba(127, 184, 255, 0.65);
+  border-radius: 2px;
+  border-color: rgb(78, 173, 255, 0.5);
+  color: black;
+}
+
+#postButton {
+  font-size: 18px;
+  font-family: 'Bebas Neue';
+  color: black;
+  margin-top: 4px;
+  margin-right: 6px;
+  background-color: rgb(70, 147, 241, 0.95);
+  border: 2px solid rgb(88, 180, 255);
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 3px;
+}
+
+#postfeed {
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+  font-family: 'Bebas Neue';
+}
