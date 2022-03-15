@@ -1,25 +1,9 @@
 {
       "posts": [
-            {
-      user: 'Naval Ravikant',
-      title: 'Meditation',
-      article: 'The art of doing nothing.',
-    },
     {
-      user: 'Jerry Seinfeld',
-      title: 'Comedy Genius',
-      article: "Oh I gotta get on that internet, I'm late on everything!",
-    },
-    {
-      user: 'Abraham Lincoln',
-      title: 'Believe',
-      article: 'Whatever you are, be a good one.',
-    },
-    {
-      user: 'Joe Rogan',
-      title: "Color doesn't matter",
-      article:
-        "I don't care if you're gay, black, Chinese, straight. That means nothing to me. It's all an illusion.",
+      "user": 'Naval Ravikant',
+      "title": 'Meditation',
+      "article": 'The art of doing nothing.'
     }
   ]
 }
