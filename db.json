@@ -1,6 +1,11 @@
 {
       "posts": [
     {
+      "user": "John Wick",
+      "title": "Born to code",
+      "article": "Do not steal my puppy or i will come for you."
+    },
+    {
       "user": "Naval Ravikant",
       "title": "Meditation",
       "article": "The art of doing nothing."
