@@ -39,17 +39,12 @@ const App = () => {
   //articles must be unique for this to work
   // if this was a real project I would give each post and ID
   // sorting through post by article is not efficient
-  const deletePost = async (id) => {
-    const res = await fetch(
-      `https://my-json-server.typicode.com/JacksCreations/assignment5/posts/${id}`,
-      {
-        method: 'DELETE',
-      }
+  const deletePost = (id) => {
+    const request = axios.delete(
+      `https://my-json-server.typicode.com/JacksCreations/assignment5/posts/${id}`
     );
-    //We should control the response status to decide if we will change the state or not.
-    res.status === 200
-      ? setPosts(posts.filter((post) => post.id !== id))
-      : alert('Error Deleting This Task');
+    request.then((response) => response.data);
+    console.log(request.data);
   };
 
   return (
