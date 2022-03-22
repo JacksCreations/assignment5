@@ -1,13 +1,13 @@
 {
       "posts": [
     {
-      "key": 1,
+      "id": 1,
       "user": "John Wick",
       "title": "Born to code",
       "article": "Do not steal my puppy or i will come for you."
     },
     {
-      "key": 2,
+      "id": 2,
       "user": "JackiLoh",
       "title": "Developer",
       "article": "This is Jacks assignment 4"
