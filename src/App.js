@@ -3,50 +3,36 @@ import React from 'react';
 import './style.css';
 import AddPost from './components/AddPost';
 import Posts from './components/Posts';
-
+import axios from 'axios';
 const App = () => {
   const [showAddPost, setShowAddPost] = useState(false);
 
   //array of initial objects
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const getPosts = async () => {
-      const postsFromServer = await fetchPosts();
-      setPosts(postsFromServer);
-    };
-
-    getPosts();
-  }, []);
-
-  //Fetch Posts
-  const fetchPosts = async () => {
-    const res = await fetch(
+  //Get using AXIOS
+  useEffect(async () => {
+    const result = await axios(
       'https://my-json-server.typicode.com/JacksCreations/assignment5/posts'
     );
-    const data = await res.json();
 
-    return data;
-  };
+    setPosts(result.data);
+  }, []);
 
   // Add Post
   const addPost = async (post) => {
-    const res = await fetch(
-      'https://my-json-server.typicode.com/JacksCreations/assignment5/posts',
-      {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify(post),
-
-        //setPosts([...posts, post]);
-      }
-    );
-
-    const data = await res.json();
-
-    setPosts([...posts, data]);
+    axios
+      .post('/posts', {
+        user: 'Fred',
+        title: 'Flintstone',
+        article: 'so cool',
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   //function deletes post with specific article.
