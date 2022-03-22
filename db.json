@@ -11,6 +11,12 @@
       "user": "JackiLoh",
       "title": "Developer",
       "article": "This is Jacks assignment 4"
+    },
+    {
+      "id": 3,
+      "user": "Johnny",
+      "title": "Creator",
+      "article": "This is a test"
     }
   ]
 }
