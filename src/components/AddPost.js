@@ -59,7 +59,7 @@ const AddPost = ({ onAdd }) => {
         />
       </div>
       <div className="mb-2">
-        <label for="contentInput" className="form-label">
+        <label htmlFor="contentInput" className="form-label">
           Blog Post
         </label>
         <textarea

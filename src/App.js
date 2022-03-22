@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import React from 'react';
 import './style.css';
 import AddPost from './components/AddPost';
@@ -8,41 +8,62 @@ const App = () => {
   const [showAddPost, setShowAddPost] = useState(false);
 
   //array of initial objects
-  const [posts, setPosts] = useState([
-    {
-      user: 'Naval Ravikant',
-      title: 'Meditation',
-      article: 'The art of doing nothing.',
-    },
-    {
-      user: 'Jerry Seinfeld',
-      title: 'Comedy Genius',
-      article: "Oh I gotta get on that internet, I'm late on everything!",
-    },
-    {
-      user: 'Abraham Lincoln',
-      title: 'Believe',
-      article: 'Whatever you are, be a good one.',
-    },
-    {
-      user: 'Joe Rogan',
-      title: "Color doesn't matter",
-      article:
-        "I don't care if you're gay, black, Chinese, straight. That means nothing to me. It's all an illusion.",
-    },
-  ]);
+  const [posts, setPosts] = useState([]);
 
-  // Add Task
-  const addTask = async (post) => {
-    setPosts([...posts, post]);
+  useEffect(() => {
+    const getPosts = async () => {
+      const postsFromServer = await fetchPosts();
+      setPosts(postsFromServer);
+    };
+
+    getPosts();
+  }, []);
+
+  //Fetch Posts
+  const fetchPosts = async () => {
+    const res = await fetch(
+      'https://my-json-server.typicode.com/JacksCreations/assignment5/posts'
+    );
+    const data = await res.json();
+
+    return data;
+  };
+
+  // Add Post
+  const addPost = async (post) => {
+    const res = await fetch(
+      'https://my-json-server.typicode.com/JacksCreations/assignment5/posts',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(post),
+
+        //setPosts([...posts, post]);
+      }
+    );
+
+    const data = await res.json();
+
+    setPosts([...posts, data]);
   };
 
   //function deletes post with specific article.
   //articles must be unique for this to work
   // if this was a real project I would give each post and ID
   // sorting through post by article is not efficient
-  const deleteTask = async (article) => {
-    setPosts(posts.filter((post) => post.article !== article));
+  const deletePost = async (id) => {
+    const res = await fetch(
+      `https://my-json-server.typicode.com/JacksCreations/assignment5/posts/${id}`,
+      {
+        method: 'DELETE',
+      }
+    );
+    //We should control the response status to decide if we will change the state or not.
+    res.status === 200
+      ? setPosts(posts.filter((post) => post.id !== id))
+      : alert('Error Deleting This Task');
   };
 
   return (
@@ -52,12 +73,12 @@ const App = () => {
           <AddPost
             //onAdd={() => setShowAddPost(!showAddPost)}
             posts={posts}
-            onAdd={addTask}
+            onAdd={addPost}
             showPost={showAddPost}
           />
         </div>
         <div className="col-md-6">
-          <Posts posts={posts} onDelete={deleteTask} />
+          <Posts posts={posts} onAdd={addPost} onDelete={deletePost} />
         </div>
       </div>
     </div>
