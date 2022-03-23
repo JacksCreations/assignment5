@@ -40,12 +40,12 @@ const App = () => {
 
   //function deletes post with specific article.
   //STILL TRYING TO 'DELETE' FROM JSON SERVER USING AXIOS
-  const deletePost = (id) => {
-    const request = axios.delete(
-      `https://my-json-server.typicode.com/JacksCreations/assignment5/posts/${id}`
+  const deletePost = async (id) => {
+    const res = await axios.delete(
+      `https://my-json-server.typicode.com/JacksCreations/assignment5/posts${id}`
     );
-    request.then((response) => response.data);
-    console.log(request.data);
+    res.status;
+    console.log('DELETE');
   };
 
   return (

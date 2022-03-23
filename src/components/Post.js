@@ -5,7 +5,7 @@ const Post = ({ post, onDelete }) => {
     <div className="post">
       <h3 className="title">
         {post.title}
-        <button className="delButton" onClick={() => onDelete(post.article)}>
+        <button className="delButton" onClick={() => onDelete(post.id)}>
           DELETE
         </button>
       </h3>
