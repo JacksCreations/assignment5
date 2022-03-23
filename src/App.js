@@ -20,25 +20,26 @@ const App = () => {
   }, []);
 
   // Add Post
+  //outputs the object to the terminal
   const addPost = async (post) => {
-    axios
-      .post('/posts', {
-        user: 'Fred',
-        title: 'Flintstone',
-        article: 'so cool',
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    //const json = JSON.stringify({ post });
+    const res = await axios.post(
+      'https://my-json-server.typicode.com/JacksCreations/assignment5/posts',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(post),
+      }
+    );
+    //const data = await res.json();
+    setPosts([...posts, res]);
+    console.log(res);
   };
 
   //function deletes post with specific article.
-  //articles must be unique for this to work
-  // if this was a real project I would give each post and ID
-  // sorting through post by article is not efficient
+  //STILL TRYING TO 'DELETE' FROM JSON SERVER USING AXIOS
   const deletePost = (id) => {
     const request = axios.delete(
       `https://my-json-server.typicode.com/JacksCreations/assignment5/posts/${id}`
