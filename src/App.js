@@ -39,7 +39,6 @@ const App = () => {
   };
 
   //function deletes post with specific article.
-  //STILL TRYING TO 'DELETE' FROM JSON SERVER USING AXIOS
   const deletePost = async (id) => {
     async function deletePost() {
       await axios.delete(
